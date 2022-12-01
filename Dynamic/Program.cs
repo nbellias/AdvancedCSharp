@@ -4,19 +4,21 @@ Console.WriteLine("Dynamic");
 object obj = "Nikos";
 Console.WriteLine(obj.GetHashCode());
 
-//Using reflection
-//var methodInfo = obj.GetType().GetMethod("GetHashCode");
-//Console.WriteLine(methodInfo.Invoke(null, null));
+// Using reflection
+// var methodInfo = obj.GetType().GetMethod("GetHashCode");
+// Console.WriteLine(methodInfo.Invoke(null, null));
 
-//DLR on CLR
+// DLR on CLR
 // With dynamic we need to write more test to assure our
 // application runs correctly.
-dynamic name = new {
+dynamic myObj = new {
     Name = "Nikos",
     Registration = DateTime.Now
 };
 
-Console.WriteLine(name);
+Console.WriteLine(myObj);
+Console.WriteLine(myObj.Name);
+Console.WriteLine(myObj.Registration);
 
 //Implicit conversions
 int i = 5;
