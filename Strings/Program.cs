@@ -6,9 +6,10 @@ Console.WriteLine("...Strings...");
 /*
  * 
  * String is a reference type that behaves like a Value type variable.
- * Being a reference types implies, that the value of a string variable is NOT the actual data, but a pointer/reference to the actual data.
- * From MSDN: Although string is a reference type, the equality operators (== and !=) are defined to compare the values of string objects,
- * not references.
+ * Being a reference types implies, that the value of a string variable is NOT the actual data, 
+ * but a pointer/reference to the actual data.
+ * From MSDN: Although string is a reference type, the equality operators (== and !=) 
+ * are defined to compare the values of string objects, not references.
  * This makes testing for string equality more intuitive.
  * 
  * This means that we might expect that comparing two strings with == or != compares to the references/pointers of the actual data.
@@ -55,11 +56,16 @@ void ChangeStringValue()
 void UseStringBuilder()
 {
 
-    StringBuilder s = new StringBuilder("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl vel pretium lectus. Ut tellus elementum sagittis vitae et leo duis. Auctor elit sed vulputate mi. Dui ut ornare lectus sit amet est. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Est ullamcorper eget nulla facilisi etiam dignissim diam quis. Aliquam id diam maecenas ultricies mi eget. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Faucibus pulvinar elementum integer enim.");
-    Console.WriteLine($"{s}\n");
-    s.AppendLine("Viverra vitae congue eu consequat ac. Amet risus nullam eget felis eget nunc lobortis mattis. Curabitur vitae nunc sed velit dignissim sodales. Id cursus metus aliquam eleifend mi in. Ut diam quam nulla porttitor massa id. Faucibus ornare suspendisse sed nisi lacus sed viverra. Massa tempor nec feugiat nisl pretium fusce. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Tincidunt dui ut ornare lectus sit amet. Senectus et netus et malesuada fames ac turpis egestas. A condimentum vitae sapien pellentesque habitant morbi.");
-    Console.WriteLine($"{s}");
-    s.AppendFormat("{0:C} ", 50);
-    Console.WriteLine($"{s}");
+    StringBuilder str1 = new StringBuilder("One ");
+    Console.WriteLine($"{str1}\n");
+    str1.AppendLine("Two ");
+    Console.WriteLine($"{str1}");
+    str1.AppendFormat("{0:C} ", 50);
+    Console.WriteLine($"{str1}");
+    StringBuilder str2 = new StringBuilder("Hello World");
+    str2 = str1;
+    Console.WriteLine($"str1={str1}, str2={str2}");
+    str2.AppendLine(" and You");
+    Console.WriteLine($"str1={str1}, str2={str2}");
 }
 

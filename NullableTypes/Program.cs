@@ -1,6 +1,14 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Nullable Types");
 
+int? nullableInt = null;
+
+Console.WriteLine(nullableInt.HasValue? nullableInt.Value : 0);
+
+nullableInt = 43;
+
+Console.WriteLine(nullableInt.HasValue ? nullableInt.Value : 0);
+
 bool hasAccess = true;
 Nullable<DateTime> date = null;
 DateTime? anotherDate = null;
