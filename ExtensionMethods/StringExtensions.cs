@@ -1,4 +1,7 @@
-﻿namespace ExtensionMethods
+﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+
+namespace ExtensionMethods
 {
 	//Microsoft: use extension methods when you really have to!
 	//Create static class
@@ -24,7 +27,21 @@
 			}
 
 			return string.Join(" ", words.Take(numberOfWords)) + "...";
-		} 
-	}
+		}
+
+		//Another extension for user defined MyClass which returns a string with the properties of the object
+		public static string PrintMyClass(this MyClass obj, string separator)
+		{
+            return obj.IntProperty.ToString() + separator + obj.StringProperty + separator + obj.DateTimeProperty.ToString();
+        }
+
+        //Yet another extension for user defined MyClass which returns a string with the properties of the object
+        public static string PrintJSON(this MyClass obj)
+        {
+            return JsonConvert.SerializeObject(obj);
+        }
+    }
+
+	
 }
 
